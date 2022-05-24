@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Echo App</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='echo.css') }}">
+    </head>
+    <body>
+        <h1>Welcome to the Echo App!!!</h1>
+        <hr>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            {% for key in request_info %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ request_info[key] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

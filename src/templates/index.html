@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Echo App</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+        <script type="text/javascript">
+            function DoPost(){
+                document.getElementById('theForm').submit()
+            }
+            window.onload = function (){
+                document.getElementById('theForm').reset()
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to the Echo App!!!</h1>
+        <hr>
+        <h3>Provide below details:</h3>
+        <form method="post" id="theForm" action="/echo">
+            <label for="Name">Name</label><br>
+            <input type="text"  name="Name" value="" /><br>
+            <label for="ID">User ID</label><br>
+            <input type="text"  name="ID" value="" /><br>
+            <label for="Message">Type your Message</label><br>
+            <input type="text"  name="Message" value="" /><br><br>
+            <input type="submit" value="Submit" /><br><br>
+        </form>
+        <br>
+        <!-- <a href="javascript:DoPost()">Submit</a> -->
+        <p>On clicking the "Submit" button, your details will be echoed back.</p>
+    </body>
+</html>
